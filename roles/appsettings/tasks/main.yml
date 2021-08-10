@@ -1,0 +1,5 @@
+- name: iTerm custom settings file
+  copy:
+    src: "{{ role_path }}/files/com.googlecode.iterm2.plist"
+    dest: ~/Library/Preferences
+

@@ -1,0 +1,14 @@
+- name: dotfiles checkout
+  git:
+    repo: 'git@github.com:geoffholden/dotfiles.git'
+    dest: ~/src/dotfiles
+
+- name: Link dotfiles
+  command: make install
+  args:
+    chdir: ~/src/dotfiles
+
+- name: Fonts
+  copy:
+    src: ~/src/dotfiles/fonts/
+    dest: ~/Library/Fonts
