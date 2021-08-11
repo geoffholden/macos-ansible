@@ -3,3 +3,27 @@
     src: "{{ role_path }}/files/com.googlecode.iterm2.plist"
     dest: ~/Library/Preferences
 
+- name: Setup Hot Corners
+  osx_defaults:
+    domain: com.apple.dock
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+    type: int
+  loop:
+    - { key: wvous-bl-corner, value: 2}
+    - { key: wvous-bl-modifier, value: 0}
+    - { key: wvous-br-corner, value: 2}
+    - { key: wvous-br-modifier, value: 0}
+    - { key: wvous-tl-corner, value: 5}
+    - { key: wvous-tl-modifier, value: 0}
+    - { key: wvous-tr-corner, value: 4}
+    - { key: wvous-tr-modifier, value: 0}
+  notify:
+    - kill dock
+
+- name: Keyboard Mappings
+  import_tasks: keyboard.yml
+
+- name: Vim plugins
+  shell: vim +'PlugUpdate --sync' +qall &> /dev/null < /dev/tty
+

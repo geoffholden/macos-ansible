@@ -22,6 +22,9 @@
   tasks:
     - name: Link Java
       become: yes
-      command: ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+      file:
+        src: /usr/local/opt/openjdk@11/libexec/openjdk.jdk
+        dest: /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+        state: link
       tags: ['homebrew']
 

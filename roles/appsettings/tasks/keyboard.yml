@@ -1,0 +1,30 @@
+- name: Find HID Devices
+  shell: |
+    ioreg -n IOHIDInterface -r | grep -e Product\" -e VendorID\" -e ProductID\" | sed -e 's/.*"\([^"]*\)" = \(.*\)$/  \1: \2/g' | sed 'N;N;s/\n/!/g' | sed -e 's/^  /- /g' | sort -u | tr '!' '\n'
+  register: hid_devices
+  changed_when: false
+
+- name: Get Current Keyboard Mapping
+  command: defaults -currentHost read -g com.apple.keyboard.modifiermapping.{{item.VendorID}}-{{item.ProductID}}-0
+  ignore_errors: true
+  register: hid_device_mapping
+  with_items: "{{ hid_devices.stdout | from_yaml }}"
+  when: item.Product.find('Keyboard') != -1
+  changed_when: false
+  failed_when: false
+
+- set_fact:
+    keyboard_modifier_mapping: |
+      (
+              {
+              HIDKeyboardModifierMappingDst = 30064771300;
+              HIDKeyboardModifierMappingSrc = 30064771129;
+          }
+      )
+
+- name: Map Caps Lock to Control
+  command: |
+    defaults -currentHost write -g com.apple.keyboard.modifiermapping.{{item.device.VendorID}}-{{item.device.ProductID}}-0 "{{keyboard_modifier_mapping}}"
+  when: keyboard_modifier_mapping | trim not in item.mapping
+  with_items: "{{ hid_device_mapping.results | json_query('[].{device: item, mapping: stdout}') | list }}"
+
