@@ -19,3 +19,9 @@
     - role: appsettings
       tags: ['appsettings']
 
+  tasks:
+    - name: Link Java
+      become: yes
+      command: ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+      tags: ['homebrew']
+

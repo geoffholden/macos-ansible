@@ -6,6 +6,7 @@ homebrew_installed_packages:
   - gpg
   - hub
   - hugo
+  - java11
   - macvim
   - mas
   - pngcrush
