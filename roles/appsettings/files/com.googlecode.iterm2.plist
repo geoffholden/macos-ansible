@@ -39,7 +39,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>223 215 570 458 0 0 1280 775 </string>
+	<string>165 67 927 628 0 0 1280 775 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -647,18 +647,18 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{247, 634}</string>
+		<string>{149, 443}</string>
 	</dict>
 	<key>NoSyncIgnoreSystemWindowRestoration</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>F4E3EE30-3D04-4299-A361-18806A8F1F3D</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 11.5.1 (Build 20G80)</string>
+	<string>Version 11.5.2 (Build 20G95)</string>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
 	<string>1.17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNextAnnoyanceTime</key>
@@ -1415,12 +1415,20 @@
 	<real>650159195.64356506</real>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/geoff/src/mac-ansible/roles/adam_mac/files</string>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/final_modern.xml?shard=14</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2021-08-12T01:12:42Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
