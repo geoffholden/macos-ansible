@@ -6,12 +6,14 @@ homebrew_installed_packages:
   - gpg
   - hub
   - hugo
+  - imagemagick
   - java11
   - macvim
   - mas
   - pngcrush
   - rsync
   - tmux
+  - watch
   - wget
   - zsh-completions
 
@@ -22,9 +24,11 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - alfred
+  - adobe-digital-editions
   - android-studio
   - autodesk-fusion360
   - calibre
+  - discord
   - gimp
   - google-chrome
   - inkscape
@@ -33,7 +37,9 @@ homebrew_cask_apps:
   - libreoffice
   - macpass
   - meshmixer
+  - mouse-fix
   - nextcloud
+  - notion
   - openscad
   - rightzoom
   - ultimaker-cura
